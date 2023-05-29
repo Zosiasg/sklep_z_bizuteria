@@ -6,15 +6,13 @@ import com.zosiasg.shop.repository.ItemRepository;
 import com.zosiasg.shop.repository.order.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
 
 import java.util.List;
 
 @Controller
-@RequestMapping("/admin")
+@RequestMapping("/addItem")
 public class AdminController {
 
     private final ItemRepository itemRepository;
@@ -34,7 +32,7 @@ public class AdminController {
     @PostMapping
     private String addItem(Item item) {
         itemRepository.save(item);
-        return "redirect:/";
+        return "redirect:/addItem";
     }
 
     @GetMapping("/showorders")
@@ -42,4 +40,10 @@ public class AdminController {
     public List<Order> showOrders() {
         return orderRepository.findAll();
     }
+
+    @DeleteMapping("/item/{itemId}")
+    public void deleteItem(@PathVariable long itemId) {
+        itemRepository.deleteById(itemId);
+    }
+
 }
