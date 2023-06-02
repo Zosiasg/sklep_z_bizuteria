@@ -21,7 +21,6 @@
                         <p th:text="${cartItem.counter}"></p>
                     </td>
                     <td th:text="${cartItem.price}"></td>
-
                 </tr>
             </table>
 
@@ -30,7 +29,6 @@
             </div>
 
         <div class="summary">
-
             <form th:action="@{/order/saveorder}" method="post">
                 <label>Imię</label>
                 <input type="text" name="firstName" required>
@@ -44,11 +42,7 @@
                 <input type="text" name="city" required>
                 <button type="submit" class="add-btn">Zamów</button>
             </form>
-
         </div>
-
-
     </div>
-
 </body>
 </html>

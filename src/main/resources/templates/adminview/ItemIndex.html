@@ -6,7 +6,10 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
-<header th:replace="fragments/header1 :: ShopHeader"></header>
+<header>
+  <span class="title">Sparkling Horizons <small> - edycja asortymentu</small></span>
+  <button onclick="location.href='addItem'">Dodaj nową pozycję</button>
+</header>
 
 <div th:switch="${items}" class="container my-5">
   <div class="row">
@@ -19,8 +22,8 @@
             <th>Nazwa</th>
             <th>Cena</th>
             <th>Zdjęcie</th>
-            <th>Edytuj</th>
-            <th>Usuń</th>
+            <th>Edycja</th>
+            <th>Usuwanie</th>
           </tr>
           </thead>
           <tbody>
