@@ -1,9 +1,86 @@
+
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Sparkling Horizons</title>
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style1.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+
+        header {
+            background-color: black;
+            color: white;
+            padding: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-left: 20px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .main-content {
+            max-width: 800px;
+            margin: 0 auto;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            margin-top: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+<!--        span {-->
+<!--            color: red;-->
+<!--            font-size: 0.9rem;-->
+<!--            margin-top: 5px;-->
+<!--        }-->
+
+        button[type="submit"] {
+            margin-top: 10px;
+            padding: 8px 16px;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
 <header>
@@ -17,15 +94,15 @@
 
         <form th:action="@{/update/{id}(id=${item.id})}" th:object="${item}" method="post">
             <label for="name">Nazwa</label>
-            <input type="text" th:field=*{name} id="name" placeholder="Name" required>
+            <input type="text" th:field="*{name}" id="name" placeholder="Name" required>
             <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
 
             <label for="price">Cena</label>
-            <input type="number" min="0.01" step="0.01" th:field=*{price} id="price" placeholder="Price" required>
+            <input type="number" min="0.01" step="0.01" th:field="*{price}" id="price" placeholder="Price" required>
             <span th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></span>
 
             <label for="imgUrl">Ścieżka do zdjęcia</label>
-            <input type="text" th:field=*{imgUrl} id="imgUrl" placeholder="ImgUrl">
+            <input type="text" th:field="*{imgUrl}" id="imgUrl" placeholder="ImgUrl">
             <span th:if="${#fields.hasErrors('imgUrl')}" th:errors="*{imgUrl}"></span>
 
             <button type="submit">Zapisz zmiany</button>
@@ -35,3 +112,6 @@
 </div>
 </body>
 </html>
+
+
+

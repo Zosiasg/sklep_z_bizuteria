@@ -1,51 +1,16 @@
-<!--<!DOCTYPE html>-->
-<!--<html xmlns:th="http://www.thymeleaf.org">-->
-<!--<head>-->
-<!--  <meta charset="UTF-8">-->
-<!--  <title>Rejestracja</title>-->
-<!--</head>-->
-<!--<body>-->
-<!--<h1>Rejestracja użytkownika</h1>-->
-<!--<form action="/register" method="post">-->
-<!--  <div>-->
-<!--    <label for="username">Nazwa użytkownika:</label>-->
-<!--    <input type="text" id="username" name="username" required>-->
-<!--  </div>-->
-<!--  <div>-->
-<!--    <label for="password">Hasło:</label>-->
-<!--    <input type="password" id="password" name="password" required>-->
-<!--  </div>-->
-<!--  <div>-->
-<!--    <button type="submit">Rerejestruj</button>-->
-<!--  </div>-->
-<!--</form>-->
-<!--<p th:text="${error}" th:if="${error}"></p>-->
-<!--</body>-->
-<!--</html>-->
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <title>Rejestracja</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-  <style>
-        body {
-            background-color: #f8f9fa;
-            padding: 20px;
-        }
+  <link rel="stylesheet" type="text/css" href="/css/style1.css">
 
-        .container {
-            max-width: 400px;
-            margin: 0 auto;
-        }
-
-        h1 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-    </style>
 </head>
 <body>
+<header>
+  <span class="title">Sparkling Horizons</span>
+</header>
 <div class="container">
   <h1>Rejestracja użytkownika</h1>
   <form action="/register" method="post">
@@ -65,3 +30,4 @@
 </div>
 </body>
 </html>
+
