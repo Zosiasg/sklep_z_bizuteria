@@ -25,7 +25,7 @@ public class AdminController {
     }
 
     @GetMapping
-    private String adminPage() {
+    private String ShowCreateItemForm() {
         return "adminview/addItem";
     }
 
